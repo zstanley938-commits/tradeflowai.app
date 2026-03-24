@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TradeFlow AI — Quote in seconds. Get paid faster.</title>
   <meta name="description" content="AI-powered quoting, invoicing and payments for UK tradespeople. Professional quotes in 60 seconds. Auto invoice chasing. Free 14-day trial." />
+  <link rel="canonical" href="https://www.tradeflowai.app" />
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tradeflowai.app" />
+  <meta property="og:title" content="TradeFlow AI — Quote in seconds. Get paid faster." />
+  <meta property="og:description" content="AI-powered quoting, invoicing and payments for UK tradespeople. Professional quotes in 60 seconds. Auto invoice chasing. Free 14-day trial." />
+  <meta property="og:image" content="https://www.tradeflowai.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="TradeFlow AI" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TradeFlow AI — Quote in seconds. Get paid faster." />
+  <meta name="twitter:description" content="AI-powered quoting, invoicing and payments for UK tradespeople. Professional quotes in 60 seconds. Auto invoice chasing. Free 14-day trial." />
+  <meta name="twitter:image" content="https://www.tradeflowai.app/og-image.png" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -357,7 +372,7 @@
     /* ── PRICING ─────────────────────────────────────── */
     .pricing { background:rgba(11,13,20,0.9); position:relative; }
     .price-head { text-align:center; margin-bottom:64px; }
-    .price-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:820px; margin:0 auto; }
+    .price-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1020px; margin:0 auto; }
     .pcard {
       background:#fff; border:1px solid var(--borderlt);
       border-radius:var(--rlg); padding:48px; position:relative;
@@ -428,10 +443,11 @@
       .steps { grid-template-columns:1fr 1fr; }
       .steps::before { display:none; }
       .test-grid { grid-template-columns:1fr; }
-      .price-grid { grid-template-columns:1fr; max-width:460px; }
+      .price-grid { grid-template-columns:1fr 1fr; max-width:680px; }
       .footer-grid { grid-template-columns:1fr 1fr; gap:44px; }
     }
     @media (max-width:680px) {
+      .price-grid { grid-template-columns:1fr; max-width:420px; }
       .section { padding:88px 24px; }
       .nav,.nav.scrolled { padding:15px 24px; }
       .hero { padding:130px 24px 100px; }
@@ -458,8 +474,61 @@
     .faq summary { color:rgba(255,255,255,0.85) !important; font-weight:600; }
     .faq .frow { border-bottom-color:rgba(255,255,255,0.08) !important; }
     .faq details[open] summary { color:var(--amberlt) !important; }
-    
+
+    /* ── EMAIL CAPTURE ───────────────────────────────── */
+    .email-capture { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:18px; max-width:520px; margin-left:auto; margin-right:auto; }
+    .email-input {
+      flex:1; min-width:220px; padding:14px 18px;
+      background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14);
+      border-radius:var(--rmd); font-size:15px; color:#fff; font-family:var(--font);
+      outline:none; transition:border 0.2s;
+    }
+    .email-input::placeholder { color:rgba(255,255,255,0.38); }
+    .email-input:focus { border-color:rgba(200,152,42,0.6); }
+    .email-success { font-size:15px; color:var(--amberlt); font-weight:600; margin-bottom:18px; display:none; }
+
+    /* ── COOKIE BANNER ───────────────────────────────── */
+    #cookie-banner {
+      position:fixed; bottom:0; left:0; right:0; z-index:9999;
+      background:rgba(11,13,20,0.97); backdrop-filter:blur(20px);
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:18px 48px; display:flex; align-items:center; justify-content:space-between;
+      gap:20px; flex-wrap:wrap;
+    }
+    #cookie-banner p { font-size:13.5px; color:rgba(255,255,255,0.62); margin:0; }
+    #cookie-banner a { color:var(--amberlt); text-decoration:underline; }
+    .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+    .cookie-accept {
+      background:linear-gradient(135deg,var(--amber),var(--amberlt));
+      color:#1a0c00; font-weight:700; font-size:13px;
+      padding:9px 20px; border-radius:var(--rmd); border:none; cursor:pointer;
+    }
+    .cookie-decline {
+      background:transparent; border:1px solid rgba(255,255,255,0.18);
+      color:rgba(255,255,255,0.58); font-size:13px; font-weight:500;
+      padding:9px 20px; border-radius:var(--rmd); cursor:pointer;
+    }
+    .cookie-accept:hover { opacity:0.9; }
+    .cookie-decline:hover { border-color:rgba(255,255,255,0.4); color:#fff; }
+
     </style>
+
+  <!-- Google Analytics 4 — REPLACE G-XXXXXXXXXX with your real Measurement ID from analytics.google.com -->
+  <script>
+    function enableAnalytics() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    }
+    // Only fire analytics if user has already accepted cookies
+    if (localStorage.getItem('tf-cookie-consent') === 'accepted') { enableAnalytics(); }
+  </script>
 </head>
 <body>
 
@@ -585,18 +654,6 @@
         <div class="bc-icon">&#9889;</div>
         <h3 class="bc-t">AI-Powered Quote Generator</h3>
         <p class="bc-b">Describe the job in plain English. The AI instantly builds a professional, itemised quote &mdash; materials, labour, VAT &mdash; all priced correctly for your trade and region.</p>
-        <div class="qm">
-          <div class="qm-dots"><div class="qm-dot" style="background:#ff5f57"></div><div class="qm-dot" style="background:#febc2e"></div><div class="qm-dot" style="background:#28c840"></div></div>
-          <div class="qm-input">Replace bathroom suite &mdash; 2 bed semi, Middlesbrough&hellip;</div>
-          <div class="qm-gen"><div class="qm-spin"></div>Generating your quote&hellip;</div>
-          <div class="qm-result">
-            <div class="qm-row"><span>Remove old suite &amp; dispose</span><span>&pound;180</span></div>
-            <div class="qm-row"><span>Supply &amp; fit bath, toilet, basin</span><span>&pound;1,240</span></div>
-            <div class="qm-row"><span>Tiling (12m&sup2;)</span><span>&pound;360</span></div>
-            <div class="qm-row"><span>Labour (3 days)</span><span>&pound;720</span></div>
-            <div class="qm-total"><span>Total inc. VAT</span><span>&pound;3,000</span></div>
-          </div>
-        </div>
       </div>
       <div class="bc b2 reveal">
         <div class="bc-icon">&#128196;</div>
@@ -622,11 +679,19 @@
         <div class="bc-icon">&#128241;</div>
         <h3 class="bc-t">iOS &amp; Android App</h3>
         <p class="bc-b">Run your entire business from your phone. Quote on-site, mark jobs complete, and track payments &mdash; all while you&apos;re working.</p>
-        <div class="mob-grid">
-          <div class="mob-card"><div class="mob-n">&pound;12,400</div><div class="mob-s">This month</div><div class="mob-t tg">&#8593; 23% vs last month</div></div>
-          <div class="mob-card"><div class="mob-n">8</div><div class="mob-s">Open quotes</div><div class="mob-t ta">3 awaiting reply</div></div>
-          <div class="mob-card"><div class="mob-n">&pound;2,340</div><div class="mob-s">Outstanding</div><div class="mob-t tr">2 overdue</div></div>
-          <div class="mob-cta"><div class="mob-cta-i">&#9889;</div><div class="mob-cta-l">New Quote</div></div>
+        <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+          <div style="background:rgba(200,152,42,0.08);border:1px solid rgba(200,152,42,0.2);border-radius:10px;padding:12px 16px;flex:1;min-width:100px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:var(--amberlt);">&#128241;</div>
+            <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);margin-top:4px;">iOS</div>
+          </div>
+          <div style="background:rgba(200,152,42,0.08);border:1px solid rgba(200,152,42,0.2);border-radius:10px;padding:12px 16px;flex:1;min-width:100px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:var(--amberlt);">&#129504;</div>
+            <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);margin-top:4px;">Android</div>
+          </div>
+          <div style="background:rgba(200,152,42,0.08);border:1px solid rgba(200,152,42,0.2);border-radius:10px;padding:12px 16px;flex:1;min-width:100px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:var(--amberlt);">&#127760;</div>
+            <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);margin-top:4px;">Web</div>
+          </div>
         </div>
       </div>
       <div class="bc b5 reveal">
@@ -1199,6 +1264,59 @@ timer = setTimeout(next, STEPS[0].duration);
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="inner">
+    <div class="price-head">
+      <div class="slabel reveal">Pricing</div>
+      <h2 class="sh2 reveal">Simple, honest pricing.</h2>
+      <p class="ssub reveal" style="max-width:400px;margin:0 auto;">Start free for 14 days. No credit card. Cancel any time.</p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard reveal">
+        <div class="p-label">Weekly</div>
+        <div class="p-price"><sup>&pound;</sup>6.99</div>
+        <div class="p-period">per week &middot; cancel any time</div>
+        <ul class="p-feats">
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Unlimited AI quotes</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Invoicing &amp; payment links</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Automatic follow-up emails</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>iOS &amp; Android apps</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>VAT calculations</li>
+        </ul>
+        <a href="https://app.tradeflowai.app/signup" class="btn-p btn-po">Start free trial</a>
+      </div>
+      <div class="pcard reveal">
+        <div class="p-label">Monthly</div>
+        <div class="p-price"><sup>&pound;</sup>27.99</div>
+        <div class="p-period">per month &middot; ~&pound;6.46/week &middot; save 8%</div>
+        <ul class="p-feats">
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Unlimited AI quotes</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Invoicing &amp; payment links</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Automatic follow-up emails</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>iOS &amp; Android apps</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>VAT calculations</li>
+        </ul>
+        <a href="https://app.tradeflowai.app/signup" class="btn-p btn-po">Start free trial</a>
+      </div>
+      <div class="pcard feat reveal">
+        <div class="p-best">Best Value &middot; Save 18%</div>
+        <div class="p-label">Annual</div>
+        <div class="p-price"><sup>&pound;</sup>299</div>
+        <div class="p-period">per year &middot; &pound;5.75/week equivalent</div>
+        <ul class="p-feats">
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Everything in Monthly</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Priority support</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Early access to new features</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Advanced analytics</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Dedicated onboarding call</li>
+        </ul>
+        <a href="https://app.tradeflowai.app/signup" class="btn-p btn-pa">Start free trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="section testimonials" id="testimonials">
   <div class="inner">
@@ -1230,46 +1348,6 @@ timer = setTimeout(next, STEPS[0].duration);
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section pricing" id="pricing">
-  <div class="inner">
-    <div class="price-head">
-      <div class="slabel reveal">Pricing</div>
-      <h2 class="sh2 reveal">Simple, honest pricing.</h2>
-      <p class="ssub reveal" style="max-width:400px;margin:0 auto;">Start free for 14 days. No credit card. Cancel any time.</p>
-    </div>
-    <div class="price-grid">
-      <div class="pcard reveal">
-        <div class="p-label">Flexible</div>
-        <div class="p-price"><sup>&pound;</sup>6.99</div>
-        <div class="p-period">per week &middot; cancel any time</div>
-        <ul class="p-feats">
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Unlimited AI quotes</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Invoicing &amp; payment links</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Automatic follow-up emails</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>iOS &amp; Android apps</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>VAT calculations</li>
-        </ul>
-        <a href="https://app.tradeflowai.app/signup" class="btn-p btn-po">Start free trial</a>
-      </div>
-      <div class="pcard feat reveal">
-        <div class="p-best">Best Value &middot; Save 17%</div>
-        <div class="p-label">Annual</div>
-        <div class="p-price"><sup>&pound;</sup>299</div>
-        <div class="p-period">per year &middot; &pound;5.75/week equivalent</div>
-        <ul class="p-feats">
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Everything in Flexible</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Priority support</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Early access to new features</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Advanced analytics</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Dedicated onboarding call</li>
-        </ul>
-        <a href="https://app.tradeflowai.app/signup" class="btn-p btn-pa">Start free trial</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="section faq" id="faq">
   <div class="inner">
@@ -1295,9 +1373,13 @@ timer = setTimeout(next, STEPS[0].duration);
     <div class="slabel slabel-dk reveal" style="text-align:center;display:block;">Get Started Today</div>
     <h2 class="cta-h2 reveal">Ready to win more jobs?</h2>
     <p class="cta-sub reveal">Built for UK tradespeople. Quote faster, invoice smarter, and get paid sooner &mdash; starting today.</p>
-    <div class="cta-btns reveal">
-      <a href="https://app.tradeflowai.app/signup" class="btn-hero-a">Start free &mdash; 14 days free</a>
-      <a href="https://app.tradeflowai.app/login" class="btn-hero-b">Sign in to your account</a>
+    <form class="email-capture reveal" onsubmit="handleEmailSignup(event)">
+      <input type="email" class="email-input" placeholder="Enter your email address" required />
+      <button type="submit" class="btn-hero-a">Start free trial &#x2192;</button>
+    </form>
+    <p class="email-success" id="email-success-msg">&#10003;&nbsp; Great &mdash; check your inbox for next steps!</p>
+    <div class="cta-btns reveal" style="margin-top:4px;">
+      <a href="https://app.tradeflowai.app/login" class="btn-hero-b">Already have an account? Sign in</a>
     </div>
     <p class="cta-fine">No credit card required &middot; Cancel any time &middot; Setup in under 5 minutes</p>
   </div>
@@ -1457,6 +1539,38 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
   });
 });
+
+// ── EMAIL SIGNUP ───────────────────────────────────────────
+function handleEmailSignup(e) {
+  e.preventDefault();
+  var email = e.target.querySelector('input[type="email"]').value;
+  // Forward to signup page with email pre-filled
+  window.location.href = 'https://app.tradeflowai.app/signup?email=' + encodeURIComponent(email);
+}
+</script>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p>We use cookies to analyse site visits and improve your experience. <a href="/cookies.html">Cookie policy</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Accept cookies</button>
+    <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var c = localStorage.getItem('tf-cookie-consent');
+    if (c) document.getElementById('cookie-banner').style.display = 'none';
+  })();
+  function acceptCookies() {
+    localStorage.setItem('tf-cookie-consent', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+    enableAnalytics();
+  }
+  function declineCookies() {
+    localStorage.setItem('tf-cookie-consent', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
 </script>
 </body>
 </html>
