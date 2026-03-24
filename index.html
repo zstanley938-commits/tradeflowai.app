@@ -288,7 +288,7 @@
     .mob-cta-l { font-size:13px; font-weight:700; color:var(--charcoal); }
 
     /* ── PLATFORM DEMO ───────────────────────────────── */
-    .demo-section { background:var(--ivory); padding:100px 0; }
+    .demo-section { background:rgba(13,15,22,0.80); padding:100px 0; position:relative; }
     .demo-head { text-align:center; margin-bottom:52px; }
     .demo-frame-wrap {
       max-width:1060px; margin:0 auto; padding:0 24px;
@@ -298,13 +298,13 @@
       content:'';
       position:absolute; inset:-1px;
       border-radius:26px;
-      background:linear-gradient(135deg, rgba(200,152,42,0.35), rgba(200,152,42,0.06) 60%, transparent);
+      background:linear-gradient(135deg, rgba(200,152,42,0.42), rgba(200,152,42,0.08) 60%, transparent);
       pointer-events:none; z-index:1;
     }
     .demo-frame-shadow {
       border-radius:22px;
       overflow:hidden;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.18), 0 8px 24px rgba(200,152,42,0.08);
+      box-shadow: 0 40px 120px rgba(0,0,0,0.5), 0 8px 32px rgba(200,152,42,0.14);
       position:relative;
     }
     .demo-frame-shadow iframe {
@@ -312,7 +312,7 @@
     }
     .demo-caption {
       text-align:center; margin-top:28px;
-      font-size:14px; color:var(--muted);
+      font-size:14px; color:rgba(255,255,255,0.42);
       display:flex; align-items:center; justify-content:center; gap:8px;
     }
     .demo-caption .pulse-dot {
@@ -440,6 +440,41 @@
     .btn-pa { background:linear-gradient(135deg,var(--amber),var(--amberlt)); color:#1a0c00; }
     .btn-pa:hover { transform:translateY(-1px); box-shadow:0 8px 32px rgba(200,152,42,0.34); }
 
+    /* ── AI AUTO-CHASE ADD-ON ────────────────────────── */
+    .addon-panel {
+      max-width:1020px; margin:28px auto 0;
+      background:rgba(200,152,42,0.05); border:1px solid rgba(200,152,42,0.2);
+      border-radius:var(--rlg); padding:32px 40px;
+      display:flex; align-items:center; gap:32px;
+      position:relative; overflow:hidden;
+    }
+    .addon-panel::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, transparent, rgba(200,152,42,0.65), transparent);
+    }
+    .addon-label {
+      position:absolute; top:-13px; left:40px;
+      background:rgba(200,152,42,0.14); border:1px solid rgba(200,152,42,0.35);
+      color:var(--amberlt); font-size:10px; font-weight:700;
+      text-transform:uppercase; letter-spacing:0.1em;
+      padding:3px 14px; border-radius:100px; white-space:nowrap;
+    }
+    .addon-icon {
+      width:56px; height:56px; border-radius:50%; flex-shrink:0;
+      background:rgba(200,152,42,0.1); border:1.5px solid rgba(200,152,42,0.3);
+      display:flex; align-items:center; justify-content:center; font-size:24px;
+    }
+    .addon-content { flex:1; min-width:0; }
+    .addon-name { font-size:17px; font-weight:800; color:#fff; margin-bottom:6px; letter-spacing:-0.01em; }
+    .addon-desc { font-size:14px; line-height:1.65; color:rgba(255,255,255,0.45); }
+    .addon-price-wrap { text-align:right; flex-shrink:0; }
+    .addon-price { font-size:34px; font-weight:800; color:var(--amberlt); letter-spacing:-0.03em; line-height:1; margin-bottom:4px; }
+    .addon-price sup { font-size:17px; vertical-align:super; font-weight:700; }
+    .addon-price span { font-size:14px; font-weight:400; color:rgba(255,255,255,0.35); }
+    .addon-sub { font-size:12px; color:rgba(255,255,255,0.3); margin-bottom:14px; }
+    .btn-addon { display:inline-block; padding:13px 28px; border-radius:var(--rmd); font-size:14.5px; font-weight:700; text-align:center; transition:all 0.28s ease; font-family:var(--font); background:transparent; border:1.5px solid rgba(200,152,42,0.4); color:var(--amberlt); white-space:nowrap; }
+    .btn-addon:hover { background:rgba(200,152,42,0.1); border-color:rgba(200,152,42,0.7); box-shadow:0 0 22px rgba(200,152,42,0.15); }
+
     /* ── FAQ ─────────────────────────────────────────── */
     .faq { background:rgba(13,15,22,0.80); position:relative; }
     .faq-head { text-align:center; margin-bottom:64px; }
@@ -501,6 +536,9 @@
     @media (max-width:680px) {
       .feat-grid { grid-template-columns:repeat(2,1fr); gap:22px 16px; }
       .price-grid { grid-template-columns:1fr; max-width:420px; }
+      .addon-panel { flex-direction:column; padding:32px 24px; text-align:center; gap:22px; }
+      .addon-price-wrap { text-align:center; width:100%; }
+      .btn-addon { width:100%; display:block; }
       .section { padding:88px 24px; }
       .nav,.nav.scrolled { padding:15px 24px; }
       .hero { padding:130px 24px 100px; }
@@ -715,7 +753,7 @@
       </div>
       <div class="fi reveal">
         <div class="fi-icon">&#128276;</div>
-        <div class="fi-t">Auto Follow-ups</div>
+        <div class="fi-t">AI Auto-Chase <span style="font-size:10px;font-weight:700;background:rgba(200,152,42,0.18);border:1px solid rgba(200,152,42,0.35);color:var(--amberlt);padding:2px 7px;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;vertical-align:middle;margin-left:4px;">Add-on</span></div>
         <div class="fi-b">Chases outstanding quotes and unpaid invoices so you never have to.</div>
       </div>
       <div class="fi reveal">
@@ -750,9 +788,9 @@
 <!-- PLATFORM DEMO -->
 <section class="demo-section" id="platform-demo">
   <div class="demo-head inner">
-    <div class="slabel reveal">See It In Action</div>
-    <h2 class="sh2 reveal">The real platform.<br>Watch it work.</h2>
-    <p class="ssub reveal" style="max-width:480px;margin:0 auto;">From new quote to payment collected — this is exactly what TradeFlow AI looks like when you're using it.</p>
+    <div class="slabel slabel-dk reveal">See It In Action</div>
+    <h2 class="sh2 sh2-dk reveal">The real platform.<br>Watch it work.</h2>
+    <p class="ssub-dk reveal" style="max-width:480px;margin:0 auto;">From new quote to payment collected — this is exactly what TradeFlow AI looks like when you're using it.</p>
   </div>
   <div class="demo-frame-wrap reveal">
     <div class="demo-frame-shadow">
@@ -1338,9 +1376,9 @@ timer = setTimeout(next, STEPS[0].duration);
         <ul class="p-feats">
           <li class="p-feat"><span class="p-chk">&#10003;</span>Unlimited AI quotes</li>
           <li class="p-feat"><span class="p-chk">&#10003;</span>Invoicing &amp; payment links</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Automatic follow-up emails</li>
           <li class="p-feat"><span class="p-chk">&#10003;</span>iOS &amp; Android apps</li>
           <li class="p-feat"><span class="p-chk">&#10003;</span>VAT calculations</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Your branding on every quote</li>
         </ul>
         <a href="https://app.tradeflowai.app/signup" class="btn-p btn-po">Start free trial</a>
       </div>
@@ -1351,9 +1389,9 @@ timer = setTimeout(next, STEPS[0].duration);
         <ul class="p-feats">
           <li class="p-feat"><span class="p-chk">&#10003;</span>Unlimited AI quotes</li>
           <li class="p-feat"><span class="p-chk">&#10003;</span>Invoicing &amp; payment links</li>
-          <li class="p-feat"><span class="p-chk">&#10003;</span>Automatic follow-up emails</li>
           <li class="p-feat"><span class="p-chk">&#10003;</span>iOS &amp; Android apps</li>
           <li class="p-feat"><span class="p-chk">&#10003;</span>VAT calculations</li>
+          <li class="p-feat"><span class="p-chk">&#10003;</span>Your branding on every quote</li>
         </ul>
         <a href="https://app.tradeflowai.app/signup" class="btn-p btn-po">Start free trial</a>
       </div>
@@ -1372,6 +1410,22 @@ timer = setTimeout(next, STEPS[0].duration);
         <a href="https://app.tradeflowai.app/signup" class="btn-p btn-pa">Start free trial</a>
       </div>
     </div>
+
+    <!-- AI AUTO-CHASE ADD-ON -->
+    <div class="addon-panel reveal">
+      <div class="addon-label">Optional Add-on</div>
+      <div class="addon-icon">&#9889;</div>
+      <div class="addon-content">
+        <div class="addon-name">AI Auto-Chase</div>
+        <div class="addon-desc">Automated follow-up messages to clients after every quote and invoice — polite, professional, and perfectly timed. TradeFlow chases, you stay focused on the work.</div>
+      </div>
+      <div class="addon-price-wrap">
+        <div class="addon-price"><sup>&pound;</sup>9.99<span>/mo</span></div>
+        <div class="addon-sub">Add to any plan</div>
+        <a href="https://app.tradeflowai.app/signup" class="btn-addon">Add AI Auto-Chase &rarr;</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
