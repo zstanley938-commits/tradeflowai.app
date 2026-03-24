@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog — TradeFlow AI</title>
   <meta name="description" content="Tips, guides and updates for UK tradespeople from the TradeFlow AI team." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="canonical" href="https://www.tradeflowai.app/blog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tradeflowai.app/blog.html" />
+  <meta property="og:title" content="Blog — TradeFlow AI" />
+  <meta property="og:description" content="Tips, guides, and insights for UK tradespeople on quoting, invoicing, and growing your trade business." />
+  <meta property="og:image" content="https://www.tradeflowai.app/og-image.png" />
+  <meta property="og:site_name" content="TradeFlow AI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.tradeflowai.app/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -44,6 +53,20 @@
     footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:32px;font-size:13px;}
     footer a{color:rgba(255,255,255,0.5);}
   </style>
+  <script>
+    function enableAnalytics() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    }
+    if (localStorage.getItem('tf-cookie-consent') === 'accepted') { enableAnalytics(); }
+  </script>
 </head>
 <body>
 
@@ -99,6 +122,20 @@ function handleSubmit(e) {
   document.querySelector('.notify-form').style.display='none';
   document.getElementById('form-msg').style.display='block';
 }
+</script>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(11,13,20,0.97);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.08);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+  <p style="font-size:13.5px;color:rgba(255,255,255,0.62);margin:0;">We use cookies to analyse site visits and improve your experience. <a href="/cookies.html" style="color:#E4B848;text-decoration:underline;">Cookie policy</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="background:linear-gradient(135deg,#C8982A,#E4B848);color:#1a0c00;font-weight:700;font-size:13px;padding:9px 20px;border-radius:18px;border:none;cursor:pointer;">Accept cookies</button>
+    <button onclick="declineCookies()" style="background:transparent;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.58);font-size:13px;font-weight:500;padding:9px 20px;border-radius:18px;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+  (function(){ var c=localStorage.getItem('tf-cookie-consent'); if(c) document.getElementById('cookie-banner').style.display='none'; })();
+  function acceptCookies(){ localStorage.setItem('tf-cookie-consent','accepted'); document.getElementById('cookie-banner').style.display='none'; enableAnalytics(); }
+  function declineCookies(){ localStorage.setItem('tf-cookie-consent','declined'); document.getElementById('cookie-banner').style.display='none'; }
 </script>
 </body>
 </html>
